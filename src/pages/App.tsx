@@ -17,6 +17,7 @@ import { useActiveNetworkVersion, useSubgraphStatus } from 'state/application/ho
 import { DarkGreyCard } from 'components/Card'
 import { SUPPORTED_NETWORK_VERSIONS, EthereumNetworkInfo, OptimismNetworkInfo } from 'constants/networks'
 import { Link } from 'rebass'
+import forkConfig from 'forkConfig'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -147,14 +148,22 @@ export default function App() {
                 </WarningBanner>
               </BannerWrapper>
             )}
-            <BannerWrapper>
-              <UrlBanner>
-                {`Explore the new combined V2 and V3 analytics at `}
-                <Link href={'https://app.uniswap.org/explore'}>
-                  <Decorator>app.uniswap.org</Decorator>
-                </Link>
-              </UrlBanner>
-            </BannerWrapper>
+            {forkConfig.showBanner && (
+              <BannerWrapper>
+                {forkConfig.pending ? (
+                  <UrlBanner>
+                    This website is still in a development phase and is currently is only for internal purposes.
+                  </UrlBanner>
+                ) : (
+                  <UrlBanner>
+                    {`Explore the new combined V2 and V3 analytics at `}
+                    <Link href={'https://app.uniswap.org/explore'}>
+                      <Decorator>app.uniswap.org</Decorator>
+                    </Link>
+                  </UrlBanner>
+                )}
+              </BannerWrapper>
+            )}
             <Hide1080>
               <TopBar />
             </Hide1080>

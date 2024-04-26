@@ -8,11 +8,16 @@ import { formatTokenName, formatTokenSymbol } from 'utils/tokens'
 import { useActiveNetworkVersion, useClients } from 'state/application/hooks'
 
 export const POOLS_BULK = (block: number | undefined, pools: string[]) => {
-  let poolString = `[`
-  pools.map((address) => {
-    return (poolString += `"${address}",`)
-  })
+  let poolString = `["0x0000000000000000000000000000"`
+  if (pools) {
+    poolString = `[`
+    pools.map((address) => {
+      return (poolString += `"${address}",`)
+    })
+  }
+
   poolString += ']'
+
   const queryString =
     `
     query pools {

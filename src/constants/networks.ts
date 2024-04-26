@@ -5,6 +5,7 @@ import POLYGON_LOGO_URL from '../assets/images/polygon-logo.png'
 import CELO_LOGO_URL from '../assets/images/celo-logo.svg'
 import BNB_LOGO_URL from '../assets/images/bnb-logo.svg'
 import BASE_LOGO_URL from '../assets/images/base-logo.svg'
+import REDSTONE_LOGO_URL from '../assets/images/redstone-logo.svg'
 import { ChainId } from '@uniswap/sdk-core'
 import AVALANCHE_LOGO_URL from '../assets/images/avalanche-logo.png'
 
@@ -17,6 +18,8 @@ export enum SupportedNetwork {
   BNB,
   BASE,
   AVALANCHE,
+  REDSTONE,
+  REDSTONE_GARNET,
 }
 
 export type NetworkInfo = {
@@ -117,13 +120,37 @@ export const AvalancheNetworkInfo: NetworkInfo = {
   imageURL: AVALANCHE_LOGO_URL,
 }
 
+export const RedstoneNetworkInfo: NetworkInfo = {
+  chainId: ChainId.REDSTONE,
+  id: SupportedNetwork.REDSTONE,
+  route: 'redstone',
+  name: 'Redstone',
+  bgColor: '#F34242',
+  primaryColor: '#F34242',
+  secondaryColor: '#FB7876',
+  imageURL: REDSTONE_LOGO_URL,
+}
+
+export const RedstoneGarnetNetworkInfo: NetworkInfo = {
+  chainId: ChainId.REDSTONE_GARNET,
+  id: SupportedNetwork.REDSTONE_GARNET,
+  route: 'garnet',
+  name: 'Redstone Garnet',
+  bgColor: '#F34242',
+  primaryColor: '#F34242',
+  secondaryColor: '#FB7876',
+  imageURL: REDSTONE_LOGO_URL,
+}
+
 export const SUPPORTED_NETWORK_VERSIONS: NetworkInfo[] = [
-  EthereumNetworkInfo,
-  PolygonNetworkInfo,
-  OptimismNetworkInfo,
-  ArbitrumNetworkInfo,
-  CeloNetworkInfo,
-  BNBNetworkInfo,
-  BaseNetworkInfo,
-  AvalancheNetworkInfo,
+  // EthereumNetworkInfo,
+  // PolygonNetworkInfo,
+  // OptimismNetworkInfo,
+  // ArbitrumNetworkInfo,
+  // CeloNetworkInfo,
+  // BNBNetworkInfo,
+  // BaseNetworkInfo,
+  // AvalancheNetworkInfo,
+  RedstoneGarnetNetworkInfo,
+  RedstoneNetworkInfo,
 ]

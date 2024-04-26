@@ -5,6 +5,7 @@ import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 
 import { ExternalLink } from '../../theme'
+import forkConfig from 'forkConfig'
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
@@ -81,7 +82,7 @@ const MenuItem = styled(ExternalLink)`
   }
 `
 
-const CODE_LINK = 'https://github.com/Uniswap/uniswap-v3-info'
+const CODE_LINK = 'TBE'
 
 export default function Menu() {
   const node = useRef<HTMLDivElement>(null)
@@ -95,7 +96,7 @@ export default function Menu() {
         <StyledMenuIcon />
       </StyledMenuButton>
 
-      {isOpen && (
+      {isOpen && forkConfig.socials && (
         <MenuFlyout>
           <MenuItem id="link" href="https://uniswap.org/">
             <Info size={14} />
