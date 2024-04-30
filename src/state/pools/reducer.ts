@@ -88,6 +88,7 @@ export const initialState: PoolsState = {
     [SupportedNetwork.BNB]: {},
     [SupportedNetwork.AVALANCHE]: {},
     [SupportedNetwork.BASE]: {},
+    [SupportedNetwork.REDSTONE]: {},
   },
 }
 
@@ -118,7 +119,6 @@ export default createReducer(initialState, (builder) =>
       })
     })
     .addCase(updatePoolChartData, (state, { payload: { poolAddress, chartData, networkId } }) => {
-      console.log(poolAddress, chartData, networkId)
       state.byAddress[networkId][poolAddress] = { ...state.byAddress[networkId][poolAddress], chartData: chartData }
     })
     .addCase(updatePoolTransactions, (state, { payload: { poolAddress, transactions, networkId } }) => {

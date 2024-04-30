@@ -49,6 +49,7 @@ export const initialState: ProtocolState = {
   [SupportedNetwork.BNB]: DEFAULT_INITIAL_STATE,
   [SupportedNetwork.AVALANCHE]: DEFAULT_INITIAL_STATE,
   [SupportedNetwork.BASE]: DEFAULT_INITIAL_STATE,
+  [SupportedNetwork.REDSTONE]: DEFAULT_INITIAL_STATE,
 }
 
 export default createReducer(initialState, (builder) =>
@@ -59,7 +60,7 @@ export default createReducer(initialState, (builder) =>
       state[networkId].lastUpdated = currentTimestamp()
     })
     .addCase(updateChartData, (state, { payload: { chartData, networkId } }) => {
-      state[networkId].chartData = chartData
+      if (state[networkId].chartData) state[networkId].chartData = chartData
     })
     .addCase(updateTransactions, (state, { payload: { transactions, networkId } }) => {
       state[networkId].transactions = transactions

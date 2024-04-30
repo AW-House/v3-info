@@ -163,14 +163,14 @@ export default function TokenPage() {
   const [savedTokens, addSavedToken] = useSavedTokens()
 
   return (
-    <Trace page="token-page" shouldLogImpression>
+    <Trace page="token-page" shouldLogImpression={false}>
       <PageWrapper>
         <ThemedBackground $backgroundColor={backgroundColor} />
         {tokenData ? (
           !tokenData.exists ? (
             <LightGreyCard style={{ textAlign: 'center' }}>
               No pool has been created with this token yet. Create one
-              <StyledExternalLink style={{ marginLeft: '4px' }} href={`https://example.com/#/add/${formattedAddress}`}>
+              <StyledExternalLink style={{ marginLeft: '4px' }} href={`https://redswap.io/#/add/${formattedAddress}`}>
                 here.
               </StyledExternalLink>
             </LightGreyCard>
@@ -188,7 +188,7 @@ export default function TokenPage() {
                     <TYPE.main>{` > `}</TYPE.main>
                     <TYPE.label>{` ${tokenData.symbol} `}</TYPE.label>
                     <StyledExternalLink
-                      href={getExplorerLink(ChainId.MAINNET, formattedAddress, ExplorerDataType.ADDRESS)}
+                      href={getExplorerLink(ChainId.REDSTONE, formattedAddress, ExplorerDataType.ADDRESS)}
                     >
                       <TYPE.main>{` (${shortenAddress(formattedAddress)}) `}</TYPE.main>
                     </StyledExternalLink>
@@ -204,7 +204,7 @@ export default function TokenPage() {
                       </StyledExternalLink>
                     )}
                     <StyledExternalLink
-                      href={getExplorerLink(ChainId.MAINNET, formattedAddress, ExplorerDataType.ADDRESS)}
+                      href={getExplorerLink(ChainId.REDSTONE, formattedAddress, ExplorerDataType.ADDRESS)}
                     >
                       <ExternalLink stroke={theme?.text2} size={'17px'} style={{ marginLeft: '12px' }} />
                     </StyledExternalLink>
@@ -231,7 +231,7 @@ export default function TokenPage() {
                   </AutoColumn>
                   {activeNetwork !== EthereumNetworkInfo ? null : (
                     <RowFixed>
-                      <StyledExternalLink href={`https://example.com/#/add/${formattedAddress}`}>
+                      <StyledExternalLink href={`https://redswap.io/#/add/${formattedAddress}`}>
                         <ButtonGray width="170px" mr="12px" height={'100%'} style={{ height: '44px' }}>
                           <RowBetween>
                             <Download size={24} />
@@ -239,7 +239,7 @@ export default function TokenPage() {
                           </RowBetween>
                         </ButtonGray>
                       </StyledExternalLink>
-                      <StyledExternalLink href={`https://example.com/#/swap?inputCurrency=${formattedAddress}`}>
+                      <StyledExternalLink href={`https://redswap.io/#/swap?inputCurrency=${formattedAddress}`}>
                         <ButtonPrimary width="100px" bgColor={backgroundColor} style={{ height: '44px' }}>
                           Trade
                         </ButtonPrimary>

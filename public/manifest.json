@@ -1,6 +1,6 @@
 {
-  "short_name": "Swap on Redstone",
-  "name": "Swap",
+  "short_name": "Redswap",
+  "name": "Redswap",
   "icons": [
     {
       "src": "./images/192x192_App_Icon.png",

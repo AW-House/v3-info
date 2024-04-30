@@ -126,7 +126,7 @@ export default function Home() {
   }, [liquidityHover, protocolData?.tvlUSD])
 
   return (
-    <Trace page={'home-page'} shouldLogImpression>
+    <Trace page={'home-page'} shouldLogImpression={false}>
       <PageWrapper>
         <ThemedBackgroundGlobal $backgroundColor={activeNetwork.bgColor} />
         <AutoColumn $gap="16px">

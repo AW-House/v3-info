@@ -27,7 +27,7 @@ export default function TokensOverview() {
   const watchListTokens = useTokenDatas(savedTokens)
 
   return (
-    <Trace page="tokens-overview-page" shouldLogImpression>
+    <Trace page="tokens-overview-page" shouldLogImpression={false}>
       <PageWrapper>
         <AutoColumn $gap="lg">
           <TYPE.main>Your Watchlist</TYPE.main>

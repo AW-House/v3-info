@@ -7,6 +7,7 @@ import { formatDollarAmount } from 'utils/numbers'
 import Polling from './Polling'
 import { useActiveNetworkVersion } from '../../state/application/hooks'
 import { SupportedNetwork } from '../../constants/networks'
+import forkConfig from 'forkConfig'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -29,7 +30,7 @@ const TopBar = () => {
   return (
     <Wrapper>
       <RowBetween>
-        <Polling />
+        {forkConfig.latestSyncedBlockSupported && <Polling />}
         <AutoRow $gap="6px">
           <RowFixed>
             {activeNetwork.id === SupportedNetwork.CELO ? (
@@ -49,7 +50,7 @@ const TopBar = () => {
         <AutoRow $gap="6px" style={{ justifyContent: 'flex-end' }}>
           {/* <StyledLink href="https://v2.info.uniswap.org/#/">V2 Analytics</StyledLink> */}
           {/* <StyledLink href="https://docs.uniswap.org/">Docs</StyledLink> */}
-          <StyledLink href="https://example.com/#/swap">App</StyledLink>
+          <StyledLink href="https://redswap.io/#/swap">App</StyledLink>
         </AutoRow>
       </RowBetween>
     </Wrapper>

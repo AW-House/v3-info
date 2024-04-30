@@ -8,6 +8,7 @@ import { useActiveNetworkVersion } from 'state/application/hooks'
 import { OptimismNetworkInfo } from 'constants/networks'
 import EthereumLogo from '../../assets/images/ethereum-logo.png'
 import { ChainId } from '@uniswap/sdk-core'
+import tokenLogoLookup from 'utils/tokenLogoFetch'
 
 export function chainIdToNetworkName(networkId: ChainId) {
   switch (networkId) {
@@ -29,9 +30,8 @@ export function chainIdToNetworkName(networkId: ChainId) {
 }
 
 const getTokenLogoURL = ({ address, chainId }: { address: string; chainId: ChainId }) => {
-  return `https://raw.githubusercontent.com/uniswap/assets/master/blockchains/${chainIdToNetworkName(
-    chainId,
-  )}/assets/${address}/logo.png`
+  const uris = tokenLogoLookup.getIcons(address, chainId) ?? []
+  return uris[0]
 }
 
 const StyledLogo = styled(Logo)<{ size: string }>`
