@@ -378,7 +378,7 @@ export const redstoneClient = new ApolloClient({
 })
 
 export const redstoneBlockClient = new ApolloClient({
-  uri: 'https://graph.stg.redswap.io/subgraphs/name/blocks-v3-redstone-mainnet',
+  uri: 'https://graph.redswap.io/subgraphs/name/blocks-v3-redstone-mainnet',
   cache: new InMemoryCache(),
   queryDeduplication: true,
   defaultOptions: {
