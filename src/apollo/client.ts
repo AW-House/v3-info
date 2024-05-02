@@ -21,7 +21,7 @@ export const blockClient = new ApolloClient({
 })
 
 export const client = new ApolloClient({
-  uri: 'https://graph.redswap.io/subgraphs/name/swap-v3-redstone-mainnet',
+  uri: 'https://graph.stg.swap-redstone.w3us.site/subgraphs/name/swap-v3-redstone-mainnet',
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
