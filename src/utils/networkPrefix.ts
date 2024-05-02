@@ -1,8 +1,8 @@
-import { EthereumNetworkInfo, NetworkInfo } from 'constants/networks'
+import { NetworkInfo, RedstoneNetworkInfo } from 'constants/networks'
 
 export function networkPrefix(activeNewtork: NetworkInfo) {
-  const isEthereum = activeNewtork === EthereumNetworkInfo
-  if (isEthereum) {
+  const isRedstone = activeNewtork === RedstoneNetworkInfo
+  if (isRedstone) {
     return '/'
   }
   const prefix = '/' + activeNewtork.route.toLocaleLowerCase() + '/'

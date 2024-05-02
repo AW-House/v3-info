@@ -1,9 +1,11 @@
 import { RowFixed, RowBetween } from 'components/Row'
 import {
+  EthereumNetworkInfo,
   AvalancheNetworkInfo,
   BNBNetworkInfo,
   CeloNetworkInfo,
   PolygonNetworkInfo,
+  RedstoneNetworkInfo,
   SUPPORTED_NETWORK_VERSIONS,
 } from 'constants/networks'
 import useTheme from 'hooks/useTheme'
@@ -14,7 +16,6 @@ import styled from 'styled-components'
 import { StyledInternalLink, TYPE } from 'theme'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import { AutoColumn } from 'components/Column'
-import { EthereumNetworkInfo } from '../../constants/networks'
 
 const Container = styled.div`
   position: relative;
@@ -122,7 +123,7 @@ export default function NetworkDropdown() {
             </TYPE.main>
             {SUPPORTED_NETWORK_VERSIONS.map((n) => {
               return (
-                <StyledInternalLink key={n.id} to={`${n === EthereumNetworkInfo ? '' : '/' + n.route}/`}>
+                <StyledInternalLink key={n.id} to={`${n === RedstoneNetworkInfo ? '' : '/' + n.route}/`}>
                   <NetworkRow
                     onClick={() => {
                       setShowMenu(false)
