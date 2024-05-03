@@ -60,7 +60,7 @@ export default createReducer(initialState, (builder) =>
       state[networkId].lastUpdated = currentTimestamp()
     })
     .addCase(updateChartData, (state, { payload: { chartData, networkId } }) => {
-      if (state[networkId].chartData) state[networkId].chartData = chartData
+      state[networkId].chartData = chartData
     })
     .addCase(updateTransactions, (state, { payload: { transactions, networkId } }) => {
       state[networkId].transactions = transactions

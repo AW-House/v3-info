@@ -3,7 +3,7 @@ const forkConfig = {
   pending: true,
   socials: false,
   latestSyncedBlockSupported: false,
-  chartDataPending: true,
+  chartDataPending: false,
 }
 
 export default forkConfig
