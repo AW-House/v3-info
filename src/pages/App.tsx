@@ -152,7 +152,8 @@ export default function App() {
               <BannerWrapper>
                 {forkConfig.pending ? (
                   <UrlBanner>
-                    This website is still in a development phase and is currently is only for internal purposes.
+                    Subgraph is reindexing. Thank you for your patience. Currently pricing data shows up for pools with
+                    minimum 1 ETH locked.
                   </UrlBanner>
                 ) : (
                   <UrlBanner>
