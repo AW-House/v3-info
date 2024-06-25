@@ -1,5 +1,5 @@
 const forkConfig = {
-  showBanner: false,
+  showBanner: true,
   pending: true,
   socials: false,
   latestSyncedBlockSupported: false,

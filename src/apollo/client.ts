@@ -350,7 +350,7 @@ export const celoBlockClient = new ApolloClient({
 })
 
 export const redstoneClient = new ApolloClient({
-  uri: 'https://graph.stg.redswap.io/subgraphs/name/swap-v3-redstone-mainnet',
+  uri: 'https://graph.redswap.io/subgraphs/name/swap-v3-redstone-mainnet',
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
